@@ -24,7 +24,15 @@ def main_view(request):
 def products_view(request):
     if request.method == "GET":
         product = Product.objects.all()
+        hashtag = Hashtag.objects.all()
         context = {
-            'product': product
+            'product': product,
+            'hashtags':hashtag
         }
     return render(request, 'product/product.html', context=context)
+# def products_detale(request):
+#     if request.method == "GET":
+#         product = Product.objects.all()
+#         context = {
+#             'product': product
+#         }
